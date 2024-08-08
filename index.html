@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glide - Executor</title>
+    <title>GlidalX - Executor</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css">
     <style>
         body {
@@ -138,12 +138,12 @@
 <body>
     <div class="container">
         <header>
-            <h1>Glide</h1>
+            <h1>GlidalX</h1>
             <p>User Interface for Glide, provided by glide.github.io.</p>
         </header>
         <div class="status-bar">
             <span class="status-indicator" id="status-indicator"></span>
-            <span id="status-text">Not Connected</span>
+            <span id="status-text">Not Injected</span>
         </div>
         <form id="loadstringForm" class="command-section">
             <div id="editor" class="monaco-editor"></div>
@@ -230,15 +230,15 @@
                     .then(response => {
                         if (response.ok || response.type === 'opaque') {
                             document.getElementById('status-indicator').style.backgroundColor = 'green';
-                            document.getElementById('status-text').innerText = 'Connected';
+                            document.getElementById('status-text').innerText = 'Injected';
                         } else {
                             document.getElementById('status-indicator').style.backgroundColor = 'red';
-                            document.getElementById('status-text').innerText = 'Not Connected';
+                            document.getElementById('status-text').innerText = 'Not Injected';
                         }
                     })
                     .catch(error => {
                         document.getElementById('status-indicator').style.backgroundColor = 'red';
-                        document.getElementById('status-text').innerText = 'Not Connected';
+                        document.getElementById('status-text').innerText = 'Not Injected';
                     });
             }
 
